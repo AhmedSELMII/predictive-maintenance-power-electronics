@@ -65,7 +65,7 @@ This project leverages my 4+ years of experience in power electronics engineerin
 - Real-world knowledge of failure modes (bond wire fatigue, solder degradation, thermal cycling)
 
 ## 📫 Contact
-Ahmed Selmi - [LinkedIn](your-linkedin-url) - sselmiahmed@gmail.com
+Ahmed Selmi - [LinkedIn]([your-linkedin-url](https://www.linkedin.com/in/ahmed-selmi-3037a5153/) - sselmiahmed@gmail.com
 
 ---
 *This project is part of my transition from Power Electronics Engineering to Industrial Data Engineering / ML.*
