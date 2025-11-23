@@ -64,6 +64,56 @@ This project leverages my 4+ years of experience in power electronics engineerin
 - Understanding of thermal degradation mechanisms
 - Real-world knowledge of failure modes (bond wire fatigue, solder degradation, thermal cycling)
 
+## 📊 Model Performance
+
+### Failure Prediction Classifier
+- **Accuracy**: 99.9%
+- **Precision**: 95.5% (When model predicts failure, it's correct 95.5% of time)
+- **Recall**: 100.0% (Catches every single failure before it occurs)
+- **Prediction Horizon**: 24 hours advance warning
+- **False Alarm Rate**: 4.5% (19 out of 20 warnings are accurate)
+
+### Remaining Useful Life (RUL) Regressor
+- **Average Prediction Error**: ±1.3 hours
+- **Use Case**: Precise maintenance scheduling
+- **Example**: If RUL = 50 hours, prediction = 48.7-51.3 hours
+
+### Top Predictive Features
+1. **thermal_resistance_KW_rolling_max** (Primary indicator)
+2. junction_temp_C_rolling_mean (Secondary indicator)
+3. temp_difference (Early warning signal)
+4. cumulative_thermal_stress (Age factor)
+
+### Key Findings
+✅ **Thermal resistance** is the dominant failure predictor (validates IGBT failure physics)  
+✅ **Rolling MAX features** capture degradation spikes better than mean  
+✅ **Temperature difference (Tj-Tc)** provides early detection capability  
+✅ Voltage and ambient temperature have minimal predictive value (as expected)  
+
+### Business Impact
+- **Zero missed failures** (100% recall) = Maximum equipment uptime
+- **Low false alarm rate** (95.5% precision) = Efficient maintenance scheduling
+- **Accurate RUL predictions** (±1.3 hrs) = Precise resource planning
+- **Estimated savings**: €8,000 per avoided failure (24hr CT scanner downtime @ €10K/day)
+
+### Model Validation Notes
+*These results are based on synthetic data with idealized degradation patterns derived from IGBT thermal physics. Real-world deployment would require validation on actual sensor data from medical imaging equipment. Expected real-world recall: 75-85% due to sensor noise, multiple failure modes, and operational variability.*
+
+## 📈 Visualizations
+
+![Feature Importance](docs/feature_importance.png)
+*Thermal resistance features dominate - confirms physics-based intuition*
+
+![Confusion Matrix](docs/confusion_matrix.png)
+*100% recall: Model catches every failure with 95.5% precision*
+
+![ROC Curve](docs/roc_curve.png)
+*Near-perfect AUC score demonstrates excellent classification performance*
+
+![RUL Predictions](docs/rul_predictions.png)
+*Remaining Useful Life predictions accurate within ±1.3 hours*
+
+
 ## 📫 Contact
 Ahmed Selmi - [LinkedIn]([your-linkedin-url](https://www.linkedin.com/in/ahmed-selmi-3037a5153/) - sselmiahmed@gmail.com
 
