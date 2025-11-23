@@ -1,0 +1,18 @@
+## 🛠️ Technical Stack
+
+**Languages & Libraries:**
+- Python 3.10+
+- pandas (data manipulation)
+- numpy (numerical computing)
+- scikit-learn (machine learning)
+- matplotlib, seaborn (visualization)
+
+**Machine Learning:**
+- Random Forest Classifier (failure prediction)
+- Random Forest Regressor (RUL estimation)
+- 67 engineered features from time-series data
+
+**Domain Expertise:**
+- Power electronics (IGBT thermal physics)
+- Failure analysis (thermal resistance degradation)
+- Predictive maintenance strategies

@@ -1,0 +1,42 @@
+## 🚀 How to Use This Project
+
+### Installation
+```bash
+git clone https://github.com/AhmedSELMII/predictive-maintenance-power-electronics.git
+cd predictive-maintenance-power-electronics
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Run the Complete Pipeline
+```bash
+# 1. Generate synthetic sensor data
+python data_generation/generate_sensor_data.py
+
+# 2. Engineer features
+python src/feature_engineering.py
+
+# 3. Train models
+python src/train_models.py
+```
+
+### Use Trained Models for Prediction
+```python
+import joblib
+import pandas as pd
+
+# Load trained model
+classifier = joblib.load('models/failure_classifier.pkl')
+regressor = joblib.load('models/rul_regressor.pkl')
+
+# Load new sensor data
+new_data = pd.read_csv('your_sensor_data.csv')
+
+# Predict failure
+will_fail = classifier.predict(new_data)
+hours_remaining = regressor.predict(new_data)
+
+print(f"Will fail soon: {will_fail[0]}")
+print(f"Hours until failure: {hours_remaining[0]:.1f}")
+```
